@@ -2,18 +2,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name ="Banking">
     <test name="Cash Withdrawal">
+        <groups>
+            <run>
+                <include name = "smoke"/>
+            </run>
+        </groups>
         <classes>
             <class name = "testng.basic"/>
-        </classes>
-    </test>
-    
-    <test name = "Amount Balance">
-        <classes>
-            <class name="testng.balance">
-                <methods>
-                    <exclude name="shopLoan"></exclude>
-                </methods>
-            </class>
+            <class name="testng.balance"/>
         </classes>
     </test>
 </suite>
