@@ -1,17 +1,20 @@
 package testng;
 
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class balance {
 
     @BeforeSuite
-    public void suite(){
+    public void launchURL(){
         System.out.println("Before Suite");
     }
+    @Parameters({"URL"})
     @Test
-    public void shopLoan(){
-        System.out.println("shop loan");
+    public void url(String urlName){
+        System.out.println("Application");
+        System.out.println(urlName);
     }
 
     @Test

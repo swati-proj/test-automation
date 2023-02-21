@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name ="Banking">
+<suite name ="Banking" parallel="tests" thread-count="6">
+    <listeners>
+        <listener class-name="testng.Listeners"></listener>
+    </listeners>
+    <parameter name="URL" value="google.com"></parameter>
     <test name="Cash Withdrawal">
-        <groups>
-            <run>
-                <include name = "smoke"/>
-            </run>
-        </groups>
         <classes>
             <class name = "testng.basic"/>
             <class name="testng.balance"/>
+            <class name="testng.data"/>
+            <class name="testng.Listeners"/>
         </classes>
     </test>
 </suite>
